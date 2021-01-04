@@ -1,0 +1,234 @@
+body
+{
+	margin: auto;
+	text-align: center;
+	margin: 0.5em;
+	background-color: #162b32;
+	color: white;
+	min-height: 60em;
+}
+
+hr
+{
+	margin-top: 5em;
+	margin-bottom: 5em;
+}
+
+p
+{
+	padding: 2em;
+}
+
+a
+{
+	display: block;
+	padding: 2em;
+	color: #4D86CA;
+}
+
+#overview 
+{
+	width: 90vw;
+	margin: auto;
+}
+
+.table_container
+{
+	display: block;
+	margin: auto;
+	width: 70vw;
+	max-width: 7in;
+	font-size: smaller;
+}
+
+table
+{
+	width: 100%;
+}
+
+table, th, td
+{
+	margin: auto;
+	border: 1px solid white;
+	border-collapse: collapse;
+}
+
+th, td
+{
+	padding: 0.3em;
+}
+
+.BL
+{
+	background-color: hsla(120, 78%, 40%, 0.6);
+	max-width: 5in;
+	margin: auto;
+	margin-top: 0.5em;
+}
+
+.HL
+{
+	background-color: hsla(355, 78%, 59%, 0.6);
+	max-width: 5in;
+	margin: auto;
+	margin-top: 0.5em;
+}
+
+.U
+{
+	background-color: hsla(196, 78%, 59%, 0.6);
+	max-width: 5in;
+	margin: auto;
+	margin-top: 0.5em;
+}
+
+.R
+{
+	background-color: hsla(0, 0%, 62%, 0.6);
+	max-width: 5in;
+	margin: auto;
+	margin-top: 0.5em;
+}
+
+.back
+{
+	display: block;
+	padding: 0.4em;
+	background-color: #d04336;
+	color: #162b32;
+	border: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0.5em;
+	border-radius: 12px;
+}
+
+.back:active
+{
+	display: block;
+	padding: 0.4em;
+	background-color: #a53127;
+	color: #162b32;
+	border: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0.5em;
+	border-radius: 12px;
+}
+
+.button
+{
+	display: block;
+	margin: auto;
+	width: 70vw;
+	padding: 0.6em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: #d04336;
+	color: #162b32;
+	border: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	border-radius: 12px;
+	max-width: 5in;
+}
+
+.button:active
+{
+	display: block;
+	margin: auto;
+	width: 70vw;
+	padding: 0.6em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: #a53127;
+	color: #162b32;
+	border: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	border-radius: 12px;
+	max-width: 5in;
+}
+
+input
+{
+	display: block;
+	margin: auto;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 60px;
+ height: 34px;
+ margin-top: 1.5em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
+}
+
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ -webkit-transition: .4s;
+ transition: .4s;
+ border-radius: 34px;
+}
+
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 26px;
+ width: 26px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+ border-radius: 50%;
+}
+
+input:checked + .slider {
+ background-color: #d04336;
+}
+
+input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+ -webkit-transform: translateX(26px);
+ -ms-transform: translateX(26px);
+ transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+ border-radius: 34px;
+}
+
+.slider.round:before {
+ border-radius: 50%;
+}
