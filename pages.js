@@ -100,6 +100,7 @@ function deleteHomePage() {
 }
 
 function createTutorialsPage() {
+    scroll(0, 0);
     let back = document.createElement("button");
     back.id = "back";
     back.className = "back";
