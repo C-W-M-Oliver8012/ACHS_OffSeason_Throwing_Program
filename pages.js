@@ -40,6 +40,12 @@ function createHomePage() {
         listContainer.appendChild(day);
     }
 
+    let tutorialsButton = document.createElement("button");
+    tutorialsButton.id = "Tutorials";
+    tutorialsButton.className = "button";
+    tutorialsButton.innerHTML = "Tutorials";
+    tutorialsButton.addEventListener("click", function() { deleteHomePage(); createTutorialsPage(); });
+
     let velocityDayButton = document.createElement("button");
     velocityDayButton.id = "Velocity Day";
     velocityDayButton.className = "button";
@@ -73,6 +79,7 @@ function createHomePage() {
     document.body.appendChild(title);
     document.body.appendChild(select);
     document.body.appendChild(listContainer);
+    document.body.appendChild(tutorialsButton);
     document.body.appendChild(velocityDayButton);
     document.body.appendChild(plyoCareVelocity);
     document.body.appendChild(hybridA);
@@ -84,11 +91,73 @@ function deleteHomePage() {
     document.getElementById("Title").remove();
     document.getElementById("Select").remove();
     document.getElementById("List Container").remove();
+    document.getElementById("Tutorials").remove();
     document.getElementById("Velocity Day").remove();
     document.getElementById("PlyoCare Velocity").remove();
     document.getElementById("Hybrid A").remove();
     document.getElementById("Hybrid B").remove();
     document.getElementById("Recovery").remove();
+}
+
+function createTutorialsPage() {
+    let back = document.createElement("button");
+    back.id = "back";
+    back.className = "back";
+    back.innerHTML = "Back";
+    back.addEventListener("click", function() { deleteTutorialsPage(); createHomePage(); });
+
+
+    let title = document.createElement("h1");
+    title.id = "Title";
+    title.innerHTML = "Tutorials";
+
+    let reverseThrowLink = document.createElement("a");
+    reverseThrowLink.id = "Reverse Throw";
+    reverseThrowLink.href = "https://www.youtube.com/watch?v=peA7U_n9gT8";
+    reverseThrowLink.target = "_blank";
+    reverseThrowLink.innerHTML = "PlyoCare Reverse Throw";
+
+    let pivotPickoffLink = document.createElement("a");
+    pivotPickoffLink.id = "Pivot Pickoff";
+    pivotPickoffLink.href = "https://www.youtube.com/watch?v=MHKyow4dPM8";
+    pivotPickoffLink.target = "_blank";
+    pivotPickoffLink.innerHTML = "PlyCare Pivot Pickoff";
+
+    let rollInThrowsLink = document.createElement("a");
+    rollInThrowsLink.id = "Roll In";
+    rollInThrowsLink.href = "https://www.youtube.com/watch?v=25XKd8Z9N50";
+    rollInThrowsLink.target = "_blank";
+    rollInThrowsLink.innerHTML = "Roll-In Throws";
+
+    let rockerThrowLink = document.createElement("a");
+    rockerThrowLink.id = "Rocker Throw";
+    rockerThrowLink.href = "https://www.youtube.com/watch?v=ZZn5l_inuNk";
+    rockerThrowLink.target = "_blank";
+    rockerThrowLink.innerHTML = "Rocker Throw";
+
+    let walkingWindupLink = document.createElement("a");
+    walkingWindupLink.id = "Walking Windup";
+    walkingWindupLink.href = "https://www.youtube.com/watch?v=UnLGNmzQr10";
+    walkingWindupLink.target = "_blank";
+    walkingWindupLink.innerHTML = "Walking Windup";
+
+    document.body.appendChild(back);
+    document.body.appendChild(title);
+    document.body.appendChild(reverseThrowLink);
+    document.body.appendChild(pivotPickoffLink);
+    document.body.appendChild(rollInThrowsLink);
+    document.body.appendChild(rockerThrowLink);
+    document.body.appendChild(walkingWindupLink);
+}
+
+function deleteTutorialsPage() {
+    document.getElementById("back").remove();
+    document.getElementById("Title").remove();
+    document.getElementById("Reverse Throw").remove();
+    document.getElementById("Pivot Pickoff").remove();
+    document.getElementById("Roll In").remove();
+    document.getElementById("Rocker Throw").remove();
+    document.getElementById("Walking Windup").remove();
 }
 
 function createDayPage(day) {
