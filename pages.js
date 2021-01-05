@@ -1,10 +1,8 @@
-let hasBeenInc = false;
 let numClicked = 0;
 
 createHomePage();
 
 function createHomePage() {
-    hasBeenInc = false;
     numClicked = 0; 
 
     scroll(0, 0);
@@ -105,6 +103,10 @@ function createDayPage(day) {
     title.id = "Title";
     title.innerHTML = day.title;
 
+    let notes = document.createElement("p");
+    notes.id = "Notes";
+    notes.innerHTML = "Notes: " + day.notes;
+
     let tableContainer = document.createElement("table");
     tableContainer.id = "tableContainer";
     tableContainer.className = "table_container";
@@ -119,15 +121,14 @@ function createDayPage(day) {
 		let input = document.createElement ("input");
 		input.type = "checkbox";
 		input.addEventListener ("change", function () {
-			if (input.checked === true && hasBeenInc === false) {
+			if (input.checked === true) {
 				numClicked++;
 			}
-			else if (input.checked === false && hasBeenInc === false) {
+			else if (input.checked === false) {
 				numClicked--
 			}
 
-			if (numClicked === day.length && hasBeenInc === false) {
-				hasBeenInc = true;
+			if (numClicked === day.length) {
 				window.alert ("Completed!");
 			}
 		});
@@ -150,11 +151,13 @@ function createDayPage(day) {
 
     document.body.appendChild(back);
     document.body.appendChild(title);
+    document.body.appendChild(notes);
     document.body.appendChild(tableContainer);
 }
 
 function deleteDayPage() {
     document.getElementById("back").remove();
     document.getElementById("Title").remove();
+    document.getElementById("Notes").remove();
     document.getElementById("tableContainer").remove();
 }
