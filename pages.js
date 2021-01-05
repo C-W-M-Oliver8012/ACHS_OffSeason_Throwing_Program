@@ -11,10 +11,35 @@ function createHomePage() {
     title.id = "Title";
     title.innerHTML = "Off-Season Throwing Program";
 
-    let img = document.createElement("img");
-    img.id = "overview";
-    img.src = "overview.png";
-    img.alt = "overview";
+    let select = document.createElement("select");
+    select.id = "Select";
+    select.value = "Week 1";
+    select.innerHTML = "Week 1";
+    for (let i = 0; i < 12; i++) {
+        let option = document.createElement("option");
+        option.value = "Week " + (i + 1);
+        option.innerHTML = "Week " + (i + 1);
+        select.appendChild(option);
+    }
+    select.addEventListener("change", function() {
+        for (let i = 1; i <= 12; i++) {
+            if (select.value == "Week " + i) {
+                for (let j = 1; j <= 7; j++) {
+                    document.getElementById("Day " + j).innerHTML = "Day " + j + ": " + selectData["Week " + i][j - 1];
+                }
+            }
+        }
+    });
+
+    let listContainer = document.createElement("div");
+    listContainer.id = "List Container";
+    listContainer.style.margin = "auto";
+    for (let i = 1; i <= 7; i++) {
+        let day = document.createElement("p");
+        day.id = "Day " + i;
+        day.innerHTML = "Day " + i + ": " + selectData["Week " + i][i - 1];
+        listContainer.appendChild(day);
+    }
 
     let velocityDayButton = document.createElement("button");
     velocityDayButton.id = "Velocity Day";
@@ -47,7 +72,8 @@ function createHomePage() {
     recovery.addEventListener("click", function() { deleteHomePage(); createDayPage(recoveryData); });
 
     document.body.appendChild(title);
-    document.body.appendChild(img);
+    document.body.appendChild(select);
+    document.body.appendChild(listContainer);
     document.body.appendChild(velocityDayButton);
     document.body.appendChild(plyoCareVelocity);
     document.body.appendChild(hybridA);
@@ -57,7 +83,8 @@ function createHomePage() {
 
 function deleteHomePage() {
     document.getElementById("Title").remove();
-    document.getElementById("overview").remove();
+    document.getElementById("Select").remove();
+    document.getElementById("List Container").remove();
     document.getElementById("Velocity Day").remove();
     document.getElementById("PlyoCare Velocity").remove();
     document.getElementById("Hybrid A").remove();

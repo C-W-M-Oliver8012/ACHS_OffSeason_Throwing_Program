@@ -49,3 +49,17 @@ recoveryData.push({Exercise: "PlyoCare Reverse Throws", Reps: "10 reps with 1 kg
 recoveryData.push({Exercise: "PlyoCare Pivot Pickoffs", Reps: "10 reps with 1 kg AND 2 kg balls"});
 recoveryData.push({Exercise: "Light Catch", Reps: "No more than 30 throws"});
 recoveryData.title = "Recovery";
+
+let selectData = [];
+selectData["Week 1"] = ["Off", "Hybrid B", "Recovery", "Hybrid B", "Hybrid B", "Recovery", "Off"];
+selectData["Week 2"] = ["Off", "Hybrid B", "Hybrid B", "Recovery", "Hybrid B", "Recovery", "Hybrid A"];
+selectData["Week 3"] = ["Off", "Off", "Hybrid A", "Recovery", "Hybrid B", "Hybrid A", "Hybrid B"];
+selectData["Week 4"] = ["Recovery", "Off", "Hybrid B", "Hybrid A", "Recovery", "Hybrid B", "Recovery"];
+selectData["Week 5"] = ["PlyoCare Velocity", "Off", "Hybrid B", "Velocity", "Recovery", "Hybrid B", "Recovery"];
+selectData["Week 6"] = ["PlyoCare Velocity", "Off", "Hybrid B", "Velocity", "Recovery", "Hybrid B", "Recovery"];
+selectData["Week 7"] = ["PlyoCare Velocity", "Off", "Hybrid B", "Velocity", "Recovery", "Hybrid B", "Hybrid B"];
+selectData["Week 8"] = ["Off", "Off", "Hybrid B", "Recovery", "Recovery/Off", "Hybrid B", "Recovery"];
+selectData["Week 9"] = ["PlyoCare Velocity", "Off", "Hybrid B", "Velocity", "Recovery", "Hybrid B", "Recovery"];
+selectData["Week 10"] = ["PlyoCare Velocity", "Off", "Hybrid B", "Velocity", "Recovery", "Hybrid B", "Recovery"];
+selectData["Week 11"] = ["PlyoCare Velocity", "Off", "Hybrid B", "Velocity", "Recovery", "Hybrid B", "Hybrid B"];
+selectData["Week 12"] = ["Off", "Off", "Hybrid B", "Recovery", "Recovery/Off", "Hybrid B", "Recovery"];
