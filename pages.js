@@ -32,16 +32,19 @@ function createHomePage() {
     hybridA.id = "Hybrid A";
     hybridA.className = "button";
     hybridA.innerHTML = "Hybrid A";
+    hybridA.addEventListener("click", function() { deleteHomePage(); createDayPage(hybridAData); });
 
     let hybridB = document.createElement("button");
     hybridB.id = "Hybrid B";
     hybridB.className = "button";
     hybridB.innerHTML = "Hybrid B";
+    hybridB.addEventListener("click", function() { deleteHomePage(); createDayPage(hybridBData); });
 
     let recovery = document.createElement("button");
     recovery.id = "Recovery";
     recovery.className = "button";
     recovery.innerHTML = "Recovery";
+    recovery.addEventListener("click", function() { deleteHomePage(); createDayPage(recoveryData); });
 
     document.body.appendChild(title);
     document.body.appendChild(img);

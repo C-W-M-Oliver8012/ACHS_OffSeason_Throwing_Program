@@ -18,3 +18,34 @@ plyoCareVelocityData.push({Exercise: "PlyoCare Rocker Throws", Reps: "1 throw ea
 plyoCareVelocityData.push({Exercise: "PlyoCare Walking Windup", Reps: "1 throw each with blue, red, yellow, gray"});
 plyoCareVelocityData.push({Exercise: "PlyoCare Walking Windup", Reps: "1 throw each with blue, red, yellow, gray"});
 plyoCareVelocityData.title = "PlyoCare Velocity";
+
+let hybridAData = [];
+hybridAData.push({Exercise: "PlyoCare Reverse Throws", Reps: "10 reps with 1 kg AND 2 kg balls"});
+hybridAData.push({Exercise: "PlyoCare Reverse Throws", Reps: "10 reps with 1 kg AND 2 kg balls"});
+hybridAData.push({Exercise: "PlyoCare Pivot Pickoffs", Reps: "10 reps with 1 kg AND 2 kg balls"});
+hybridAData.push({Exercise: "PlyoCare Roll-In Throws", Reps: "10 reps with 1 kg AND 450g balls"});
+hybridAData.push({Exercise: "PlyoCare Rocker Throws", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridAData.push({Exercise: "PlyoCare Rocker Throws", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridAData.push({Exercise: "PlyoCare Rocker Throws", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridAData.push({Exercise: "PlyoCare Walking Windups", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridAData.push({Exercise: "PlyoCare Walking Windups", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridAData.push({Exercise: "PlyoCare Walking Windups", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridAData.push({Exercise: "Jaeger Long Toss Series", Reps: "Max distance, plus 8-12 compression throws"});
+hybridAData.title = "Hybrid A";
+
+let hybridBData = [];
+hybridBData.push({Exercise: "PlyoCare Reverse Throws", Reps: "10 reps with 1 kg AND 2 kg balls"});
+hybridBData.push({Exercise: "PlyoCare Pivot Pickoffs", Reps: "10 reps with 1 kg AND 2 kg balls"});
+hybridBData.push({Exercise: "PlyoCare Roll-Ins", Reps: "10 reps with 1 kg AND 450g balls"});
+hybridBData.push({Exercise: "PlyoCare Rocker Throws", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridBData.push({Exercise: "PlyoCare Rocker Throws", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridBData.push({Exercise: "PlyoCare Walking Windups", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridBData.push({Exercise: "PlyoCare Walking Windups", Reps: "1 throw each with blue, red, yellow, gray"});
+hybridBData.push({Exercise: "Jaeger Long Toss Series", Reps: "Extension Phase"});
+hybridBData.title = "Hybrid B";
+
+let recoveryData = [];
+recoveryData.push({Exercise: "PlyoCare Reverse Throws", Reps: "10 reps with 1 kg AND 2 kg balls"});
+recoveryData.push({Exercise: "PlyoCare Pivot Pickoffs", Reps: "10 reps with 1 kg AND 2 kg balls"});
+recoveryData.push({Exercise: "Light Catch", Reps: "No more than 30 throws"});
+recoveryData.title = "Recovery";
