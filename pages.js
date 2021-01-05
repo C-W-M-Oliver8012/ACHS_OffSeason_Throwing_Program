@@ -111,6 +111,7 @@ function createDayPage(day) {
         let cell3 = row.insertCell(2);
 
         cell1.innerHTML = day[i].Exercise;
+        cell1.style.fontWeight = 'bold';
         cell2.innerHTML = day[i].Reps;
         cell3.appendChild(label);
     }
