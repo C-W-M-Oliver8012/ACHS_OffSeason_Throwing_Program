@@ -7,6 +7,7 @@ function createHomePage() {
     hasBeenInc = false;
     numClicked = 0; 
 
+    scroll(0, 0);
     let title = document.createElement("h1");
     title.id = "Title";
     title.innerHTML = "Off-Season Throwing Program";
@@ -93,6 +94,7 @@ function deleteHomePage() {
 }
 
 function createDayPage(day) {
+    scroll(0, 0);
     let back = document.createElement("button");
     back.id = "back";
     back.className = "back";
