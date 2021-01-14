@@ -36,7 +36,7 @@ function createHomePage() {
     for (let i = 1; i <= 7; i++) {
         let day = document.createElement("p");
         day.id = "Day " + i;
-        day.innerHTML = "Day " + i + ": " + selectData["Week " + i][i - 1];
+        day.innerHTML = "Day " + i + ": " + selectData["Week 1"][i - 1];
         listContainer.appendChild(day);
     }
 
