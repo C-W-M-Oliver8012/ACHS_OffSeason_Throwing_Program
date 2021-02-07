@@ -40,6 +40,12 @@ function createHomePage() {
         listContainer.appendChild(day);
     }
 
+    let velocityDayTrackerButton = document.createElement("button");
+    velocityDayTrackerButton.id = "Velocity Day Tracker";
+    velocityDayTrackerButton.className = "button";
+    velocityDayTrackerButton.innerHTML = "Velocity Day Tracker";
+    velocityDayTrackerButton.addEventListener("click", function() { deleteHomePage(); createVelocityDayTrackerPage(); });
+
     let tutorialsButton = document.createElement("button");
     tutorialsButton.id = "Tutorials";
     tutorialsButton.className = "button";
@@ -79,6 +85,7 @@ function createHomePage() {
     document.body.appendChild(title);
     document.body.appendChild(select);
     document.body.appendChild(listContainer);
+    document.body.appendChild(velocityDayTrackerButton);
     document.body.appendChild(tutorialsButton);
     document.body.appendChild(velocityDayButton);
     document.body.appendChild(plyoCareVelocity);
@@ -91,12 +98,250 @@ function deleteHomePage() {
     document.getElementById("Title").remove();
     document.getElementById("Select").remove();
     document.getElementById("List Container").remove();
+    document.getElementById("Velocity Day Tracker").remove();
     document.getElementById("Tutorials").remove();
     document.getElementById("Velocity Day").remove();
     document.getElementById("PlyoCare Velocity").remove();
     document.getElementById("Hybrid A").remove();
     document.getElementById("Hybrid B").remove();
     document.getElementById("Recovery").remove();
+}
+
+function createVelocityDayTrackerPage() {
+    let back = document.createElement("button");
+    back.id = "back";
+    back.className = "back";
+    back.innerHTML = "Back";
+    back.addEventListener("click", function() { deleteVelocityDayTrackerPage(); createHomePage(); });
+
+    let title = document.createElement("h1");
+    title.id = "Title";
+    title.innerHTML = "Velocity Day Tracker";
+
+    let select = document.createElement("select");
+    select.id = "Select";
+    select.value = "Week 5";
+    select.innerHTML = "Week 5";
+    for (let i = 5; i < 12; i++) {
+        if (i !== 8) {
+            let option = document.createElement("option");
+            option.value = "Week " + i;
+            option.innerHTML = "Week " + i;
+            select.appendChild(option);
+        }
+    }
+    select.addEventListener("change", function() {
+        for (let j = 3; j < 8; j++) {
+            for (let i = 0; i < 4; i++) {
+                if (j !== 5) {
+                    let input = document.getElementById("oz " + j + " input" + i);
+                    if (localStorage.getItem("oz " + j + " input" + i + select.value)) {
+                        input.value = localStorage.getItem("oz " + j + " input" + i + select.value);
+                    } else {
+                        localStorage.setItem("oz " + j + " input" + i + select.value, 0);
+                        input.value = localStorage.getItem("oz " + j + " input" + i + select.value);
+                    }
+                } else {
+                    for (let k = 1; k < 3; k++) {
+                        let input = document.getElementById("oz " + j + " input" + k + i);
+                    if (localStorage.getItem("oz " + j + " input" + k + i+ select.value)) {
+                        input.value = localStorage.getItem("oz " + j + " input" + k + i+ select.value);
+                    } else {
+                        localStorage.setItem("oz " + j + " input" + k + i+ select.value, 0);
+                        input.value = localStorage.getItem("oz " + j + " input" + k + i+ select.value);
+                    }
+                    }
+                }
+            }
+        }
+    });
+
+    let br1 = document.createElement("hr");
+    br1.id = "br1";
+
+    let br2 = document.createElement("hr");
+    br2.id = "br2";
+
+    let velocityDayTitle = document.createElement("h2");
+    velocityDayTitle.id = "Velocity Day Title";
+    velocityDayTitle.innerHTML = "Velocity Day";
+
+    let oz_5_label1 = document.createElement("h3");
+    oz_5_label1.id = "oz 5 label1";
+    oz_5_label1.innerHTML = "5oz";
+
+    let oz_6_label = document.createElement("h3");
+    oz_6_label.id = "oz 6 label";
+    oz_6_label.innerHTML = "6oz";
+
+    let oz_7_label = document.createElement("h3");
+    oz_7_label.id = "oz 7 label";
+    oz_7_label.innerHTML = "7oz";
+
+    let oz_5_label2 = document.createElement("h3");
+    oz_5_label2.id = "oz 5 label2";
+    oz_5_label2.innerHTML = "5oz";
+
+    let oz_4_label = document.createElement("h3");
+    oz_4_label.id = "oz 4 label";
+    oz_4_label.innerHTML = "4oz";
+
+    let oz_3_label = document.createElement("h3");
+    oz_3_label.id = "oz 3 label";
+    oz_3_label.innerHTML = "3oz";
+
+    document.body.appendChild(back);
+    document.body.appendChild(title);
+    document.body.appendChild(select);
+    document.body.appendChild(br1);
+    document.body.appendChild(velocityDayTitle);
+    document.body.appendChild(oz_5_label1);
+
+    for (let i = 0; i < 4; i++) {
+        let oz_5_input = document.createElement("input");
+        oz_5_input.id = "oz 5 input1" + i;
+        oz_5_input.type = "number";
+        document.body.appendChild(oz_5_input);
+    }
+
+    document.body.appendChild(oz_6_label);
+
+    for (let i = 0; i < 4; i++) {
+        let oz_6_input = document.createElement("input");
+        oz_6_input.id = "oz 6 input" + i;
+        oz_6_input.type = "number";
+        document.body.appendChild(oz_6_input);
+    }
+
+    document.body.appendChild(oz_7_label);
+
+    for (let i = 0; i < 4; i++) {
+        let oz_7_input = document.createElement("input");
+        oz_7_input.id = "oz 7 input" + i;
+        oz_7_input.type = "number";
+        document.body.appendChild(oz_7_input);
+    }
+
+    document.body.appendChild(oz_5_label2);
+
+    for (let i = 0; i < 4; i++) {
+        let oz_5_input = document.createElement("input");
+        oz_5_input.id = "oz 5 input2" + i;
+        oz_5_input.type = "number";
+        document.body.appendChild(oz_5_input);
+    }
+
+    document.body.appendChild(oz_4_label);
+
+    for (let i = 0; i < 4; i++) {
+        let oz_4_input = document.createElement("input");
+        oz_4_input.id = "oz 4 input" + i;
+        oz_4_input.type = "number";
+        document.body.appendChild(oz_4_input);
+    }
+
+    document.body.appendChild(oz_3_label);
+
+    for (let i = 0; i < 4; i++) {
+        let oz_3_input = document.createElement("input");
+        oz_3_input.id = "oz 3 input" + i;
+        oz_3_input.type = "number";
+        document.body.appendChild(oz_3_input);
+    }
+
+    let submitButton = document.createElement("button");
+    submitButton.id = "Submit";
+    submitButton.innerHTML = "Submit";
+    submitButton.className = "button";
+    submitButton.addEventListener("click", function() {
+        for (let j = 3; j < 8; j++) {
+            for (let i = 0; i < 4; i++) {
+                if (j !== 5) {
+                    let input = document.getElementById("oz " + j + " input" + i);
+                    localStorage.setItem("oz " + j + " input" + i + select.value, input.value);
+                } else {
+                    for (let k = 1; k < 3; k++) {
+                        let input = document.getElementById("oz " + j + " input" + k + i);
+                        localStorage.setItem("oz " + j + " input" + k + i + select.value, input.value);
+                    }
+                }
+            }
+        }
+        alert("Submitted!");
+    });
+
+    document.body.appendChild(submitButton);
+    document.body.appendChild(br2);
+
+    for (let j = 3; j < 8; j++) {
+        for (let i = 0; i < 4; i++) {
+            if (j !== 5) {
+                let input = document.getElementById("oz " + j + " input" + i);
+                if (localStorage.getItem("oz " + j + " input" + i + "Week 5")) {
+                    input.value = localStorage.getItem("oz " + j + " input" + i + "Week 5");
+                } else {
+                    localStorage.setItem("oz " + j + " input" + i + "Week 5", 0);
+                    input.value = localStorage.getItem("oz " + j + " input" + i + "Week 5");
+                }
+            } else {
+                for (let k = 1; k < 3; k++) {
+                    let input = document.getElementById("oz " + j + " input" + k + i);
+                if (localStorage.getItem("oz " + j + " input" + k + i+ "Week 5")) {
+                    input.value = localStorage.getItem("oz " + j + " input" + k + i+ "Week 5");
+                } else {
+                    localStorage.setItem("oz " + j + " input" + k + i+ "Week 5", 0);
+                    input.value = localStorage.getItem("oz " + j + " input" + k + i + "Week 5");
+                }
+                }
+            }
+        }
+    }
+}
+
+function deleteVelocityDayTrackerPage() {
+    document.getElementById("back").remove();
+    document.getElementById("Title").remove();
+    document.getElementById("Select").remove();
+    document.getElementById("br1").remove();
+    document.getElementById("Velocity Day Title").remove();
+    document.getElementById("oz 5 label1").remove();
+
+    for(let i = 0; i < 4; i++) {
+        document.getElementById("oz 5 input1" + i).remove();
+    }
+
+    document.getElementById("oz 6 label").remove();
+
+    for(let i = 0; i < 4; i++) {
+        document.getElementById("oz 6 input" + i).remove();
+    }
+
+    document.getElementById("oz 7 label").remove();
+
+    for(let i = 0; i < 4; i++) {
+        document.getElementById("oz 7 input" + i).remove();
+    }
+
+    document.getElementById("oz 5 label2").remove();
+
+    for(let i = 0; i < 4; i++) {
+        document.getElementById("oz 5 input2" + i).remove();
+    }
+
+    document.getElementById("oz 4 label").remove();
+
+    for(let i = 0; i < 4; i++) {
+        document.getElementById("oz 4 input" + i).remove();
+    }
+
+    document.getElementById("oz 3 label").remove();
+
+    for(let i = 0; i < 4; i++) {
+        document.getElementById("oz 3 input" + i).remove();
+    }
+
+    document.getElementById("Submit").remove();
+    document.getElementById("br2").remove();
 }
 
 function createTutorialsPage() {
