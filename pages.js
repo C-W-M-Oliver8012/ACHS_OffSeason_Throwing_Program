@@ -139,6 +139,75 @@ function createPlyoCareVelocityDayTrackerPage() {
             select.appendChild(option);
         }
     }
+    select.addEventListener("change", function() {
+        for (let i = 0; i < 3; i++) {
+            if (localStorage.getItem("kg" + i + select.value)) {
+                let kg = document.getElementById("kg" + i);
+                kg.value = localStorage.getItem("kg" + i + select.value);
+            } else {
+                let kg = document.getElementById("kg" + i);
+                localStorage.setItem("kg" + i + select.value, 0);
+                kg.value = localStorage.getItem("kg" + i + select.value);
+            }
+        }
+
+        for (let i = 0; i < 5; i++) {
+            if (localStorage.getItem("g" + i + select.value)) {
+                let g = document.getElementById("g" + i);
+                g.value = localStorage.getItem("g" + i + select.value);
+            } else {
+                let g = document.getElementById("g" + i);
+                localStorage.setItem("g" + i + select.value, 0);
+                g.value = localStorage.getItem("g" + i + select.value);
+            }
+        }
+
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 4; j++) {
+                let c = "blue";
+                if (j === 0) {
+                    c = "blue";
+                } else if (j === 1) {
+                    c = "red";
+                } else if (j === 2) {
+                    c = "yellow";
+                } else if (j === 3) {
+                    c = "gray";
+                }
+                if (localStorage.getItem("rocker " + c + " input" + i + select.value)) {
+                    let color = document.getElementById("rocker " + c + " input" + i);
+                    color.value = localStorage.getItem("rocker " + c + " input" + i + select.value);
+                } else {
+                    let color = document.getElementById("rocker " + c + " input" + i);
+                    localStorage.setItem("rocker " + c + " input" + i + select.value, 0);
+                    color.value = localStorage.getItem("rocker " + c + " input" + i + select.value);
+                }
+            }
+        }
+
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 4; j++) {
+                let c = "blue";
+                if (j === 0) {
+                    c = "blue";
+                } else if (j === 1) {
+                    c = "red";
+                } else if (j === 2) {
+                    c = "yellow";
+                } else if (j === 3) {
+                    c = "gray";
+                }
+                if (localStorage.getItem("walking " + c + " input" + i + select.value)) {
+                    let color = document.getElementById("walking " + c + " input" + i);
+                    color.value = localStorage.getItem("walking " + c + " input" + i + select.value);
+                } else {
+                    let color = document.getElementById("walking " + c + " input" + i);
+                    localStorage.setItem("walking " + c + " input" + i + select.value, 0);
+                    color.value = localStorage.getItem("walking " + c + " input" + i + select.value);
+                }
+            }
+        }
+    });
 
     let hr1 = document.createElement("hr");
     hr1.id = "hr1";
@@ -300,7 +369,121 @@ function createPlyoCareVelocityDayTrackerPage() {
     submitButton.id = "Submit";
     submitButton.className = "button";
     submitButton.innerHTML = "Submit";
+    submitButton.addEventListener("click", function() {
+        alert("Submitted!");
+        for (let i = 0; i < 3; i++) {
+            let kg = document.getElementById("kg" + i);
+            localStorage.setItem("kg" + i + select.value, kg.value);
+        }
+
+        for (let i = 0; i < 5; i++) {
+            let g = document.getElementById("g" + i);
+            localStorage.setItem("g" + i + select.value, g.value);
+        }
+
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 4; j++) {
+                let c = "blue";
+                if (j === 0) {
+                    c = "blue";
+                } else if (j === 1) {
+                    c = "red";
+                } else if (j === 2) {
+                    c = "yellow";
+                } else if (j === 3) {
+                    c = "gray";
+                }
+                let color = document.getElementById("rocker " + c + " input" + i);
+                localStorage.setItem("rocker " + c + " input" + i + select.value, color.value);
+            }
+        }
+
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 4; j++) {
+                let c = "blue";
+                if (j === 0) {
+                    c = "blue";
+                } else if (j === 1) {
+                    c = "red";
+                } else if (j === 2) {
+                    c = "yellow";
+                } else if (j === 3) {
+                    c = "gray";
+                }
+                let color = document.getElementById("walking " + c + " input" + i);
+                localStorage.setItem("walking " + c + " input" + i + select.value, color.value);
+            }
+        }
+    });
     document.body.appendChild(submitButton);
+
+    for (let i = 0; i < 3; i++) {
+        if (localStorage.getItem("kg" + i + select.value)) {
+            let kg = document.getElementById("kg" + i);
+            kg.value = localStorage.getItem("kg" + i + select.value);
+        } else {
+            let kg = document.getElementById("kg" + i);
+            localStorage.setItem("kg" + i + select.value, 0);
+            kg.value = localStorage.getItem("kg" + i + select.value);
+        }
+    }
+
+    for (let i = 0; i < 5; i++) {
+        if (localStorage.getItem("g" + i + select.value)) {
+            let g = document.getElementById("g" + i);
+            g.value = localStorage.getItem("g" + i + select.value);
+        } else {
+            let g = document.getElementById("g" + i);
+            localStorage.setItem("g" + i + select.value, 0);
+            g.value = localStorage.getItem("g" + i + select.value);
+        }
+    }
+
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 4; j++) {
+            let c = "blue";
+            if (j === 0) {
+                c = "blue";
+            } else if (j === 1) {
+                c = "red";
+            } else if (j === 2) {
+                c = "yellow";
+            } else if (j === 3) {
+                c = "gray";
+            }
+            if (localStorage.getItem("rocker " + c + " input" + i + select.value)) {
+                let color = document.getElementById("rocker " + c + " input" + i);
+                color.value = localStorage.getItem("rocker " + c + " input" + i + select.value);
+            } else {
+                let color = document.getElementById("rocker " + c + " input" + i);
+                localStorage.setItem("rocker " + c + " input" + i + select.value, 0);
+                color.value = localStorage.getItem("rocker " + c + " input" + i + select.value);
+            }
+        }
+    }
+
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 4; j++) {
+            let c = "blue";
+            if (j === 0) {
+                c = "blue";
+            } else if (j === 1) {
+                c = "red";
+            } else if (j === 2) {
+                c = "yellow";
+            } else if (j === 3) {
+                c = "gray";
+            }
+            if (localStorage.getItem("walking " + c + " input" + i + select.value)) {
+                let color = document.getElementById("walking " + c + " input" + i);
+                color.value = localStorage.getItem("walking " + c + " input" + i + select.value);
+            } else {
+                let color = document.getElementById("walking " + c + " input" + i);
+                localStorage.setItem("walking " + c + " input" + i + select.value, 0);
+                color.value = localStorage.getItem("walking " + c + " input" + i + select.value);
+            }
+        }
+    }
 }
 
 function deletePlyoCareVelocityDayTrackerPage() {
