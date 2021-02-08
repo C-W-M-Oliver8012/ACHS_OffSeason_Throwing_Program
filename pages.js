@@ -116,6 +116,7 @@ function deleteHomePage() {
 }
 
 function createPlyoCareVelocityDayTrackerPage() {
+    scroll(0, 0);
     let back = document.createElement("button");
     back.id = "back";
     back.className = "back";
@@ -354,6 +355,7 @@ function deletePlyoCareVelocityDayTrackerPage() {
 }
 
 function createVelocityDayTrackerPage() {
+    scroll(0, 0);
     let back = document.createElement("button");
     back.id = "back";
     back.className = "back";
