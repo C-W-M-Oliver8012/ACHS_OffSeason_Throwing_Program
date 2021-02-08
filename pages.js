@@ -40,6 +40,12 @@ function createHomePage() {
         listContainer.appendChild(day);
     }
 
+    let plyoCareVelocityDayButton = document.createElement("button");
+    plyoCareVelocityDayButton.id = "PlyoCare Velocity Day Tracker";
+    plyoCareVelocityDayButton.className = "button";
+    plyoCareVelocityDayButton.innerHTML = "PlyoCare Velocity Day Tracker";
+    plyoCareVelocityDayButton.addEventListener("click", function() { deleteHomePage(); createPlyoCareVelocityDayTrackerPage(); });
+
     let velocityDayTrackerButton = document.createElement("button");
     velocityDayTrackerButton.id = "Velocity Day Tracker";
     velocityDayTrackerButton.className = "button";
@@ -85,6 +91,7 @@ function createHomePage() {
     document.body.appendChild(title);
     document.body.appendChild(select);
     document.body.appendChild(listContainer);
+    document.body.appendChild(plyoCareVelocityDayButton);
     document.body.appendChild(velocityDayTrackerButton);
     document.body.appendChild(tutorialsButton);
     document.body.appendChild(velocityDayButton);
@@ -98,6 +105,7 @@ function deleteHomePage() {
     document.getElementById("Title").remove();
     document.getElementById("Select").remove();
     document.getElementById("List Container").remove();
+    document.getElementById("PlyoCare Velocity Day Tracker").remove();
     document.getElementById("Velocity Day Tracker").remove();
     document.getElementById("Tutorials").remove();
     document.getElementById("Velocity Day").remove();
@@ -105,6 +113,244 @@ function deleteHomePage() {
     document.getElementById("Hybrid A").remove();
     document.getElementById("Hybrid B").remove();
     document.getElementById("Recovery").remove();
+}
+
+function createPlyoCareVelocityDayTrackerPage() {
+    let back = document.createElement("button");
+    back.id = "back";
+    back.className = "back";
+    back.innerHTML = "Back";
+    back.addEventListener("click", function() { deletePlyoCareVelocityDayTrackerPage(); createHomePage(); });
+
+    let title = document.createElement("h1");
+    title.id = "Title";
+    title.innerHTML = "PlyoCare Velocity Day Tracker";
+
+    let select = document.createElement("select");
+    select.id = "Select";
+    select.value = "Week 5";
+    select.innerHTML = "Week 5";
+    for (let i = 5; i < 12; i++) {
+        if (i !== 8) {
+            let option = document.createElement("option");
+            option.value = "Week " + i;
+            option.innerHTML = "Week " + i;
+            select.appendChild(option);
+        }
+    }
+
+    let hr1 = document.createElement("hr");
+    hr1.id = "hr1";
+
+    let rollinTitle = document.createElement("h2");
+    rollinTitle.id = "Roll-Ins";
+    rollinTitle.innerHTML = "PlyoCare Roll-In Throws";
+
+    let hr2 = document.createElement("hr");
+    hr2.id = "hr2";
+
+    document.body.appendChild(back);
+    document.body.appendChild(title);
+    document.body.appendChild(select);
+    document.body.appendChild(hr1);
+    document.body.appendChild(rollinTitle);
+
+    let kgTitle = document.createElement("h3");
+    kgTitle.id = "kg Title";
+    kgTitle.innerHTML = "1kg";
+    document.body.appendChild(kgTitle);
+
+    for (let i = 0; i < 3; i++) {
+        let kg = document.createElement("input");
+        kg.type = "number";
+        kg.id = "kg" + i;
+        document.body.appendChild(kg);
+    }
+
+    let gTitle = document.createElement("h3");
+    gTitle.id = "g Title";
+    gTitle.innerHTML = "450g";
+    document.body.appendChild(gTitle);
+
+    for (let i = 0; i < 5; i++) {
+        let g = document.createElement("input");
+        g.type = "number";
+        g.id = "g" + i;
+        document.body.appendChild(g);
+    }
+
+    document.body.appendChild(hr2);
+
+    let rockerTitle = document.createElement("h2");
+    rockerTitle.id = "Rocker";
+    rockerTitle.innerHTML = "PlyoCare Rocker Throws";
+    document.body.appendChild(rockerTitle);
+
+    let rockerBlueTitle = document.createElement("h3");
+    rockerBlueTitle.id = "Rocker Blue";
+    rockerBlueTitle.innerHTML = "Blue";
+    document.body.appendChild(rockerBlueTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "rocker blue input" + i;
+        document.body.appendChild(input);
+    }
+
+    let rockerRedTitle = document.createElement("h3");
+    rockerRedTitle.id = "Rocker Red";
+    rockerRedTitle.innerHTML = "Red";
+    document.body.appendChild(rockerRedTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "rocker red input" + i;
+        document.body.appendChild(input);
+    }
+
+    let rockerYellowTitle = document.createElement("h3");
+    rockerYellowTitle.id = "Rocker Yellow";
+    rockerYellowTitle.innerHTML = "Yellow";
+    document.body.appendChild(rockerYellowTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "rocker yellow input" + i;
+        document.body.appendChild(input);
+    }
+
+    let rockerGrayTitle = document.createElement("h3");
+    rockerGrayTitle.id = "Rocker Gray";
+    rockerGrayTitle.innerHTML = "Gray";
+    document.body.appendChild(rockerGrayTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "rocker gray input" + i;
+        document.body.appendChild(input);
+    }
+
+    let hr3 = document.createElement("hr");
+    hr3.id = "hr3";
+    document.body.appendChild(hr3);
+
+    let walkingTitle = document.createElement("h2");
+    walkingTitle.id = "Walking";
+    walkingTitle.innerHTML = "PlyoCare Walking Windups";
+    document.body.appendChild(walkingTitle);
+
+    let walkingBlueTitle = document.createElement("h3");
+    walkingBlueTitle.id = "Walking Blue";
+    walkingBlueTitle.innerHTML = "Blue";
+    document.body.appendChild(walkingBlueTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "walking blue input" + i;
+        document.body.appendChild(input);
+    }
+
+    let walkingRedTitle = document.createElement("h3");
+    walkingRedTitle.id = "Walking Red";
+    walkingRedTitle.innerHTML = "Red";
+    document.body.appendChild(walkingRedTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "walking red input" + i;
+        document.body.appendChild(input);
+    }
+
+    let walkingYellowTitle = document.createElement("h3");
+    walkingYellowTitle.id = "Walking Yellow";
+    walkingYellowTitle.innerHTML = "Yellow";
+    document.body.appendChild(walkingYellowTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "walking yellow input" + i;
+        document.body.appendChild(input);
+    }
+
+    let walkingGrayTitle = document.createElement("h3");
+    walkingGrayTitle.id = "Walking Gray";
+    walkingGrayTitle.innerHTML = "Gray";
+    document.body.appendChild(walkingGrayTitle);
+
+    for (let i = 0; i < 2; i++) {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.id = "walking gray input" + i;
+        document.body.appendChild(input);
+    }
+
+    let hr4 = document.createElement("hr");
+    hr4.id = "hr4";
+    document.body.appendChild(hr4);
+
+    let submitButton = document.createElement("button");
+    submitButton.id = "Submit";
+    submitButton.className = "button";
+    submitButton.innerHTML = "Submit";
+    document.body.appendChild(submitButton);
+}
+
+function deletePlyoCareVelocityDayTrackerPage() {
+    document.getElementById("back").remove();
+    document.getElementById("Title").remove();
+    document.getElementById("Select").remove();
+    document.getElementById("hr1").remove();
+    document.getElementById("Roll-Ins").remove();
+    document.getElementById("hr2").remove();
+    document.getElementById("kg Title").remove();
+
+    for (let i = 0; i < 3; i++) {
+        document.getElementById("kg" + i).remove();
+    }
+
+    document.getElementById("g Title").remove();
+
+    for (let i = 0; i < 5; i++) {
+        document.getElementById("g" + i).remove();
+    }
+
+    document.getElementById("Rocker").remove();
+    document.getElementById("Rocker Blue").remove();
+    document.getElementById("Rocker Red").remove();
+    document.getElementById("Rocker Yellow").remove();
+    document.getElementById("Rocker Gray").remove();
+
+    for (let i = 0; i < 2; i++) {
+        document.getElementById("rocker blue input" + i).remove();
+        document.getElementById("rocker red input" + i).remove();
+        document.getElementById("rocker yellow input" + i).remove();
+        document.getElementById("rocker gray input" + i).remove();
+    }
+
+    document.getElementById("hr3").remove();
+
+    document.getElementById("Walking").remove();
+    document.getElementById("Walking Blue").remove();
+    document.getElementById("Walking Red").remove();
+    document.getElementById("Walking Yellow").remove();
+    document.getElementById("Walking Gray").remove();
+
+    for (let i = 0; i < 2; i++) {
+        document.getElementById("walking blue input" + i).remove();
+        document.getElementById("walking red input" + i).remove();
+        document.getElementById("walking yellow input" + i).remove();
+        document.getElementById("walking gray input" + i).remove();
+    }
+
+    document.getElementById("hr4").remove();
+    document.getElementById("Submit").remove();
 }
 
 function createVelocityDayTrackerPage() {
@@ -156,11 +402,11 @@ function createVelocityDayTrackerPage() {
         }
     });
 
-    let br1 = document.createElement("hr");
-    br1.id = "br1";
+    let hr1 = document.createElement("hr");
+    hr1.id = "hr1";
 
-    let br2 = document.createElement("hr");
-    br2.id = "br2";
+    let hr2 = document.createElement("hr");
+    hr2.id = "hr2";
 
     let velocityDayTitle = document.createElement("h2");
     velocityDayTitle.id = "Velocity Day Title";
@@ -193,7 +439,7 @@ function createVelocityDayTrackerPage() {
     document.body.appendChild(back);
     document.body.appendChild(title);
     document.body.appendChild(select);
-    document.body.appendChild(br1);
+    document.body.appendChild(hr1);
     document.body.appendChild(velocityDayTitle);
     document.body.appendChild(oz_5_label1);
 
@@ -271,7 +517,7 @@ function createVelocityDayTrackerPage() {
     });
 
     document.body.appendChild(submitButton);
-    document.body.appendChild(br2);
+    document.body.appendChild(hr2);
 
     for (let j = 3; j < 8; j++) {
         for (let i = 0; i < 4; i++) {
@@ -302,7 +548,7 @@ function deleteVelocityDayTrackerPage() {
     document.getElementById("back").remove();
     document.getElementById("Title").remove();
     document.getElementById("Select").remove();
-    document.getElementById("br1").remove();
+    document.getElementById("hr1").remove();
     document.getElementById("Velocity Day Title").remove();
     document.getElementById("oz 5 label1").remove();
 
@@ -341,7 +587,7 @@ function deleteVelocityDayTrackerPage() {
     }
 
     document.getElementById("Submit").remove();
-    document.getElementById("br2").remove();
+    document.getElementById("hr2").remove();
 }
 
 function createTutorialsPage() {
